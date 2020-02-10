@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title>Vue DAB</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+
+    <link rel="stylesheet" href="https://cdn.byu.edu/byu-theme-components/latest/byu-theme-components.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script async src="https://cdn.byu.edu/byu-theme-components/latest/byu-theme-components.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+
+
+    <script type="module" src="https://cdn.byu.edu/byu-user-info-oauth/latest/byu-user-info-oauth.min.js"></script>
+    <script nomodule async src="https://cdn.byu.edu/byu-user-info-oauth/latest/byu-user-info-oauth.nomodule.min.js"></script>
+
+    <script>
+
+      // Your supervisor will give you the production and sandbox clientID
+
+      // replace the following with your sandbox key and the URL of your locally running front-end app
+      let clientID = '<your client ID here>'
+      let redirectURI = 'https://localhost:8080/?'
+
+      // Replace the url with your live site url and production client ID
+      if(location.hostname.toLocaleLowerCase() === 'lsfacultyschedules.byu.edu') {
+          clientID = '<your client ID here>'
+          redirectURI = 'https://<production-url-here>.byu.edu/?'
+       }
+
+      var oauthConfig = {
+        clientId: clientID,
+        callbackUrl: redirectURI
+      }
+    </script>
+
+
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but vue-dabs doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
